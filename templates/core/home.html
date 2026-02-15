@@ -1,0 +1,306 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Accueil | Expand Africa Tech{% endblock %}
+
+{% block content %}
+
+<!-- ===== HERO SECTION ===== -->
+<section class="relative h-[90vh] flex items-center justify-center text-center overflow-hidden">
+
+    {% comment %} <!-- Background image -->
+    <div class="absolute inset-0">
+        <img src="{% static 'images/hero.jpg' %}" 
+             class="w-full h-full object-cover object-center opacity-40">
+    </div> {% endcomment %}
+     <!-- Background image with overlay -->
+    <div class="absolute inset-0">
+        <img src="{% static 'images/hero.jpg' %}" 
+             class="w-full h-full object-cover object-center filter brightness-50">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20"></div>
+    </div>
+
+
+    <!-- Overlay content -->
+    <div class="relative z-10 max-w-3xl px-4 sm:px-6">
+        <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold text-blue-500">
+            Connecting to the Africa Digital World
+        </h1>
+        <p class="mt-6 text-lg sm:text-base md:text-lg text-gray-300">
+            EATECH accompagne les entreprises avec des solutions
+            web, réseaux et cybersécurité modernes.
+        </p>
+        <div class="mt-8 flex justify-center gap-4 flex-wrap">
+            <a href="#services" class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-500 transition">
+                Nos Services
+            </a>
+            <a href="#contact" class="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition">
+                Contactez-nous
+            </a>
+        </div>
+
+    </div>
+   
+         
+
+    <!-- Optional animated down arrow -->
+    <div class="absolute bottom-10 w-full flex justify-center animate-bounce">
+        <a href="#services" class="text-white text-3xl">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </div>
+</section>
+
+<!-- ===== ABOUT SECTION ULTRA PREMIUM ===== -->
+<section class="py-24 bg-gradient-to-b from-gray-950 to-gray-900" id="about">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid gap-14 md:grid-cols-2 items-center">
+
+        <!-- Image Premium -->
+        <div data-aos="fade-right" class="flex justify-center">
+            <div class="relative group">
+
+                <!-- Glow background -->
+                <div class="absolute -inset-2 bg-blue-500/20 blur-3xl opacity-40 group-hover:opacity-70 transition duration-500 rounded-3xl"></div>
+
+                <img src="{% static 'images/about.jpg' %}" 
+                     alt="EATECH"
+                     class="relative rounded-3xl shadow-2xl w-full max-w-md h-[80vh] object-cover
+                            border border-blue-500/20
+                            transition duration-500
+                            group-hover:scale-105">
+            </div>
+        </div>
+
+        <!-- Texte -->
+        <div class="text-gray-300 backdrop-blur-sm" data-aos="fade-left">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-500">
+                À propos de Expand Africa Tech
+            </h2>
+
+            <p class="mt-5 leading-relaxed text-gray-300">
+                Fondée par Junior M Richard, EATECH est née d’une vision claire : mettre le talent africain au service de la communauté et accompagner la transformation digitale du continent. À travers des solutions technologiques modernes, innovantes et accessibles, EATECH s’engage à soutenir les entreprises et contribuer activement au développement de l’Afrique.
+            </p>
+
+            <!-- Vision -->
+            <div class="mt-8 p-5 rounded-xl bg-gray-800/40 border border-blue-500/10 hover:border-blue-500/30 transition">
+                <h3 class="text-xl font-semibold text-blue-500">Notre Vision</h3>
+                <p class="mt-2">Être le partenaire technologique incontournable pour les entreprises en Afrique et dans le monde.</p>
+            </div>
+
+            <!-- Mission -->
+            <div class="mt-4 p-5 rounded-xl bg-gray-800/40 border border-blue-500/10 hover:border-blue-500/30 transition">
+                <h3 class="text-xl font-semibold text-blue-500">Notre Mission</h3>
+                <p class="mt-2">Fournir des solutions web, applications, sécurité et design de haute qualité pour aider les entreprises à se développer.</p>
+            </div>
+
+            <!-- Objectifs -->
+            <div class="mt-4 p-5 rounded-xl bg-gray-800/40 border border-blue-500/10 hover:border-blue-500/30 transition">
+                <h3 class="text-xl font-semibold text-blue-500">Nos Objectifs</h3>
+                <ul class="mt-2 space-y-1">
+                    <li>✔ Créer des sites web professionnels et performants</li>
+                    <li>✔ Optimiser la visibilité en ligne grâce au SEO</li>
+                    <li>✔ Protéger les systèmes informatiques et réseaux</li>
+                    <li>✔ Offrir des designs graphiques modernes</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ===== SERVICES SECTION ===== -->
+<section id="services" class="py-20 bg-gray-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-500">Nos Services</h2>
+        <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
+            EATECH offre des solutions professionnelles pour vos besoins numériques.
+        </p>
+
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+            <!-- Service -->
+            <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-blue-500/20 transition duration-300 transform hover:-translate-y-3 group">
+                <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-blue-500/10 text-blue-500 text-3xl group-hover:bg-blue-500 group-hover:text-white transition">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-500">Création de sites web</h3>
+                <p class="mt-2 text-gray-300">Sites web professionnels, responsive et optimisés SEO pour votre entreprise.</p>
+            </div>
+
+            <!-- Applications web -->
+            <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-blue-500/20 transition duration-300 transform hover:-translate-y-3 group">
+                <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-blue-500/10 text-blue-500 text-3xl group-hover:bg-blue-500 group-hover:text-white transition">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-500">Applications Web</h3>
+                <p class="mt-2 text-gray-300">Applications web sur mesure pour gérer vos activités efficacement.</p>
+            </div>
+
+            <!-- Sécurité -->
+            <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-blue-500/20 transition duration-300 transform hover:-translate-y-3 group">
+                <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-blue-500/10 text-blue-500 text-3xl group-hover:bg-blue-500 group-hover:text-white transition">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-500">Sécurité & Réseaux</h3>
+                <p class="mt-2 text-gray-300">Audit réseau, cybersécurité et optimisation des systèmes pour protéger vos données.</p>
+            </div>
+
+            <!-- SEO -->
+            <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-blue-500/20 transition duration-300 transform hover:-translate-y-3 group">
+                <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-blue-500/10 text-blue-500 text-3xl group-hover:bg-blue-500 group-hover:text-white transition">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-500">Optimisation SEO</h3>
+                <p class="mt-2 text-gray-300">Améliorez votre visibilité sur Google et attirez plus de clients.</p>
+            </div>
+
+            <!-- Design -->
+            <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-blue-500/20 transition duration-300 transform hover:-translate-y-3 group">
+                <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-blue-500/10 text-blue-500 text-3xl group-hover:bg-blue-500 group-hover:text-white transition">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-500">Design Graphique</h3>
+                <p class="mt-2 text-gray-300">Création d'identité visuelle, logos et supports graphiques professionnels.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ===== BLOG SECTION PRO DESIGN ===== -->
+<section class="py-24 bg-gradient-to-b from-gray-950 to-gray-900" id="blog">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-500 text-center">
+            Nos Derniers Articles
+        </h2>
+
+        <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+            {% for blog in latest_blogs %}
+            <div class="group bg-gray-900/70 backdrop-blur-sm rounded-2xl overflow-hidden
+                        border border-blue-500/10 hover:border-blue-500/30
+                        shadow-lg hover:shadow-blue-500/20
+                        transition duration-500 transform hover:-translate-y-3">
+
+                <!-- Image -->
+                <div class="overflow-hidden">
+                    {% if blog.image %}
+                        <img src="{{ blog.image.url }}" alt="{{ blog.title }}"
+                             class="h-52 w-full object-cover transition duration-500 group-hover:scale-110">
+                    {% else %}
+                        <img src="{% static 'images/blog-placeholder.jpg' %}" alt="{{ blog.title }}"
+                             class="h-52 w-full object-cover transition duration-500 group-hover:scale-110">
+                    {% endif %}
+                </div>
+
+                <!-- Content -->
+                <div class="p-6 text-left">
+                    <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition">
+                        {{ blog.title }}
+                    </h3>
+
+                    <p class="mt-3 text-gray-300 leading-relaxed">
+                        {{ blog.content|truncatewords:20 }}
+                    </p>
+
+                    <!-- Button -->
+                    <a href="{% url 'blog-detail' blog.id %}"
+                       class="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-lg
+                              bg-blue-500/10 text-blue-400
+                              hover:bg-blue-500 hover:text-white
+                              transition">
+                        Lire l'article
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+            {% empty %}
+                <p class="text-gray-300 col-span-3 text-center">
+                    Aucun article publié pour le moment.
+                </p>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== CONTACT SECTION ===== -->
+<section id="contact" class="py-20 bg-gray-950">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+
+        <!-- Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-500 text-center animate-fadeIn">
+            Contactez Expand Africa Technology
+        </h2>
+        <p class="mt-4 text-gray-300 text-center max-w-2xl mx-auto">
+            Besoin d’un site web, d’un réseau sécurisé ou d’une application ? Envoyez-nous un message et notre équipe vous répondra rapidement.
+        </p>
+
+        <!-- Form -->
+        <form method="POST" action="{% url 'contact' %}" class="mt-12 bg-gray-900 p-8 md:p-12 rounded-3xl shadow-xl space-y-6 border border-blue-500/20 backdrop-blur-sm">
+            {% csrf_token %}
+
+            {% comment %} <!-- Name & Email -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex flex-col">
+                    <label class="text-gray-300 font-semibold mb-1">Nom</label>
+                    {{ form.name }}
+                </div>
+                <div class="flex flex-col">
+                    <label class="text-gray-300 font-semibold mb-1">Email</label>
+                    {{ form.email }}
+                </div>
+            </div>
+
+            <!-- Subject -->
+            <div class="flex flex-col">
+                <label class="text-gray-300 font-semibold mb-1">Sujet</label>
+                {{ form.subject }}
+            </div>
+
+            <!-- Message -->
+            <div class="flex flex-col">
+                <label class="text-gray-300 font-semibold mb-1">Message</label>
+                {{ form.message }}
+            </div> {% endcomment %}
+
+            <!-- Submit Button -->
+            <button type="submit" 
+                class="w-full bg-blue-500 text-white font-semibold p-4 rounded-xl 
+                    hover:bg-blue-600 transition shadow-md hover:shadow-lg flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-envelope"></i>
+                    Cliquer pour envoyer le message ou contactez-nous sur les liens ci-dessous
+            </button>
+
+        </form>
+
+        <!-- Social Media Links -->
+        <div class="mt-12 flex flex-wrap justify-center gap-8 text-lg">
+            <a href="https://www.facebook.com/profile.php?id=61576049513460" target="_blank" class="flex items-center gap-2 text-blue-600 hover:text-blue-400 transition">
+                <i class="fab fa-facebook-square text-3xl"></i>
+                <span>Expand Africa Technology</span>
+            </a>
+            <a href="https://wa.me/25762514311" target="_blank" class="flex items-center gap-2 text-green-500 hover:text-green-400 transition">
+                <i class="fab fa-whatsapp-square text-3xl"></i>
+                <span>+257 62514311</span>
+            </a>
+            <a href="mailto:eatech.cd@gmail.com" class="flex items-center gap-2 text-blue-500 hover:text-blue-300 transition">
+                <i class="fa-solid fa-envelope text-3xl"></i>
+                <span>eatech.cd@gmail.com</span>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Message envoyé | Expand Africa Tech{% endblock %}
+
+{% block content %}
+<section class="py-20 bg-gray-900 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-500">Merci !</h2>
+    <p class="mt-4 text-gray-300">Votre message a été envoyé avec succès. Nous vous répondrons bientôt.</p>
+    <a href="{% url 'home' %}" class="mt-6 inline-block bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition">Retour à l'accueil</a>
+</section>
+{% endblock %}

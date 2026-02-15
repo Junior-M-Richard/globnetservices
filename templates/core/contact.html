@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Contact | Expand Africa Tech{% endblock %}
+
+{% block content %}
+<section class="py-20 bg-gray-950">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+
+        <!-- Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-500 text-center animate-fadeIn">
+            Contactez-nous
+        </h2>
+        <p class="mt-4 text-gray-300 text-center max-w-2xl mx-auto">
+            Besoin d’un site web, d’un réseau sécurisé ou d’une application ? Envoyez-nous un message et notre équipe vous répondra rapidement.
+        </p>
+
+        <form method="POST" action="{% url 'contact' %}" class="mt-12 bg-gray-900 p-8 md:p-12 rounded-3xl shadow-xl space-y-6 border border-blue-500/20 backdrop-blur-sm">
+    {% csrf_token %}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex flex-col">
+            <label for="{{ form.name.id_for_label }}" class="text-gray-300 font-semibold mb-1">Nom</label>
+            {{ form.name }}
+        </div>
+        <div class="flex flex-col">
+            <label for="{{ form.email.id_for_label }}" class="text-gray-300 font-semibold mb-1">Email</label>
+            {{ form.email }}
+        </div>
+    </div>
+
+    <div class="flex flex-col">
+        <label for="{{ form.message.id_for_label }}" class="text-gray-300 font-semibold mb-1">Message</label>
+        {{ form.message }}
+    </div>
+
+    <button type="submit" class="w-full bg-blue-500 text-white font-semibold p-4 rounded-xl hover:bg-blue-600 transition shadow-md hover:shadow-lg">
+        Envoyer le message
+    </button>
+</form>
+
+        <!-- Social Links -->
+        <div class="mt-12 flex flex-wrap justify-center gap-8 text-lg">
+            <a href="https://www.facebook.com/profile.php?id=61576049513460" target="_blank" class="flex items-center gap-2 text-blue-600 hover:text-blue-400 transition">
+                <i class="fab fa-facebook-square text-3xl"></i>
+                <span>Expand Africa Technology</span>
+            </a>
+            <a href="https://wa.me/25762514311" target="_blank" class="flex items-center gap-2 text-green-500 hover:text-green-400 transition">
+                <i class="fab fa-whatsapp-square text-3xl"></i>
+                <span>+257 62514311</span>
+            </a>
+            <a href="mailto:eatech.cd@gmail.com" class="flex items-center gap-2 text-blue-500 hover:text-blue-300 transition">
+                <i class="fa-solid fa-envelope text-3xl"></i>
+                <span>eatech.cd@gmail.com</span>
+            </a>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+

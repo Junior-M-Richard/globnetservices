@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.svg' %}">
+    
+    <!-- Pour que ça apparaisse bien dans les résultats de recherche Google -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    <title>{% block title %}Expand Africa Tech{% endblock %}</title>
+    <!-- Tailwind CSS -->
+    {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'dist/output.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endcomment %}
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        html { scroll-behavior: smooth; }
+        /* Mobile menu slide-down */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-white overflow-x-hidden">
+
+
+<!-- Navbar -->
+    <nav class="bg-gray-900 shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center h-16">
+
+             <!-- Logo -->
+        <a href="{% url 'home' %}" class="flex items-center gap-2 flex-shrink-0">
+            <img src="{% static 'images/logo.svg' %}" alt="Logo" class="h-[100px] w-auto">
+            <span class="hidden text-lg sm:text-xl font-bold text-blue-500 whitespace-nowrap">
+                Expand Africa Tech
+            </span>
+        </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-blue-500 transition">À propos</a>
+                <a href="#services" class="hover:text-blue-500 transition">Services</a>
+                <a href="#blog" class="hover:text-blue-500 transition">Blog</a>
+                <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="focus:outline-none">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="bg-gray-900 px-4 py-2 flex flex-col gap-2">
+            <a href="#about" class="block px-4 py-2 hover:text-blue-500 transition">À propos</a>
+            <a href="#services" class="block px-4 py-2 hover:text-blue-500 transition">Services</a>
+            <a href="#blog" class="block px-4 py-2 hover:text-blue-500 transition">Blog</a>
+            <a href="#contact" class="block px-4 py-2 hover:text-blue-500 transition">Contact</a>
+        </div>
+    </nav>
+
+
+
+    <!-- Page content -->
+    <div class="pt-16">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 mt-20 py-6 text-center text-gray-400">
+        &copy; 2026 Expand Africa Technology. Tous droits réservés.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000 });
+
+        // Mobile menu toggle avec slide
+        const btn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            if (mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== "0px") {
+                mobileMenu.style.maxHeight = "0px";
+            } else {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+            }
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        const links = mobileMenu.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = "0px";
+            });
+        });
+    </script>
+</body>
+</html>
