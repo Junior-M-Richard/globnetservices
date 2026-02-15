@@ -2,6 +2,53 @@
 {% load static %}
 {% block title %}{{ blog.title }} | Expand Africa Tech{% endblock %}
 
+
+
+
+{% block meta_description %}{{ blog.summary }}{% endblock %}
+{% block og_title %}{{ blog.title }}{% endblock %}
+{% block og_description %}{{ blog.summary }}{% endblock %}
+{% block og_image %}{{ blog.image.url|default:'https://expandafricatechnology.onrender.com/static/images/default.png' }}{% endblock %}
+{% block twitter_title %}{{ blog.title }}{% endblock %}
+{% block twitter_description %}{{ blog.summary }}{% endblock %}
+{% block twitter_image %}{{ blog.image.url|default:'https://expandafricatechnology.onrender.com/static/images/default.png' }}{% endblock %}
+
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ blog.title|escapejs }}",
+  "description": "{{ blog.summary|escapejs }}",
+  "author": {
+    "@type": "Person",
+    "name": "Junior Richard"
+  },
+  "datePublished": "{{ blog.created_at|date:'Y-m-d' }}",
+  "image": "{{ blog.image.url|default:'https://expandafricatechnology.onrender.com/static/images/default.png' }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ request.build_absolute_uri }}"
+  }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<article class="max-w-4xl mx-auto p-4">
+    <h1 class="text-3xl font-bold mb-4">{{ blog.title }}</h1>
+    {% if blog.image %}
+        <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="mb-4 rounded-lg">
+    {% endif %}
+    <p class="mb-4 text-gray-300">{{ blog.summary }}</p>
+    <div class="prose prose-invert">
+        {{ blog.content|safe }}
+    </div>
+</article>
+{% endblock %}
+
+
+
 {% block content %}
 <section class="py-24 bg-gradient-to-b from-gray-950 to-gray-900">
     <div class="max-w-4xl mx-auto px-4">

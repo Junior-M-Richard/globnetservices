@@ -11,6 +11,43 @@
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
     <title>{% block title %}Accueil | Expand Africa Technology{% endblock %}</title>
 
+<!-- Description SEO -->
+<meta name="description" content="EATECH – Création de sites web, applications et design graphique.">
+
+<!-- Mots-clés -->
+<meta name="keywords" content="site web, application web, design, SEO, Expand Africa Technology">
+
+<!-- Robots pour indexation -->
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph pour réseaux sociaux -->
+<meta property="og:title" content="Expand Africa Technology">
+<meta property="og:description" content="Création de sites web, applications et design graphique.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://expandafricatechnology.onrender.com">
+<meta property="og:image" content="https://expandafricatechnology.onrender.com/static/images/logo.svg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Expand Africa Technology">
+<meta name="twitter:description" content="Création de sites web, applications et design graphique.">
+<meta name="twitter:image" content="https://expandafricatechnology.onrender.com/static/images/logo.svg">
+
+
+<!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% block og_title %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{% endblock %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    
+   
+
+    <!-- Extra head for scripts or JSON-LD -->
+    {% block extra_head %}{% endblock %}
+
+
+
     <!-- Tailwind CSS -->
     {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
     <link rel="stylesheet" href="{% static 'dist/output.css' %}">
@@ -29,6 +66,21 @@
             transition: max-height 0.3s ease-in-out;
         }
     </style>
+    <!-- JSON-LD pour SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Titre de l'article",
+      "description": "Description courte",
+      "author": {
+        "@type": "Person",
+        "name": "Junior Richard"
+      },
+      "datePublished": "2026-02-15",
+      "image": "https://expandafricatechnology.onrender.com/static/images/blog1.png"
+    }
+    </script>
 </head>
 <body class="bg-gray-950 text-white overflow-x-hidden">
 
