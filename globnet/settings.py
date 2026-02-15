@@ -10,7 +10,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-secret-key-here')  # Util
 DEBUG = False  # Toujours False en production
 
 # Autoriser localhost pour tests locaux + domaine Render (à mettre à jour après création)
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'globnet.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'expandafricatechnology.onrender.com']
+ALLOWED_HOSTS = ['expandafricatechnology.onrender.com']
+
 
 # -------------------
 # APPLICATIONS
