@@ -26,7 +26,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'blog',
-    'django.contrib.sitemaps',  # SEO sitemap
+    'django.contrib.sitemaps',  # SEO sitemap,
+
+    "cloudinary",
+    "cloudinary_storage",
+    
 ]
 
 MIDDLEWARE = [
