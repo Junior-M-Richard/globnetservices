@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import cloudinary
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -126,9 +127,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 INSTALLED_APPS += ['cloudinary', 'cloudinary_storage']
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'ton_cloud_name',
-    'API_KEY': 'ton_api_key',
-    'API_SECRET': 'ton_api_secret'
+    'CLOUD_NAME': 'ditei6mg6',
+    'API_KEY': '478297146318356',
+    'API_SECRET': 'yKsr0UDKYKwLVzZavGBjYPvj6EQ'
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
