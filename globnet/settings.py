@@ -25,12 +25,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     "cloudinary",
+    "cloudinary_storage",
     'core',
     'blog',
     'django.contrib.sitemaps',  # SEO sitemap,
 
-    "cloudinary",
-    "cloudinary_storage",
+   
     
 ]
 
@@ -123,8 +124,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-INSTALLED_APPS += ['cloudinary', 'cloudinary_storage']
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'ditei6mg6',
